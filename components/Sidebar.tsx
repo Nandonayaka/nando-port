@@ -1,13 +1,13 @@
 'use client'
 
-import { 
-  Files, 
-  Search, 
-  GitBranch, 
-  Bug, 
-  Blocks, 
-  UserCircle2, 
-  Settings 
+import {
+  Files,
+  Search,
+  GitBranch,
+  Bug,
+  Blocks,
+  UserCircle2,
+  Settings
 } from 'lucide-react'
 import { useState } from 'react'
 
@@ -23,30 +23,29 @@ export default function ActivityBar() {
   ]
 
   return (
-    <div className="w-12 bg-[#0c1017] border-r border-[#1f242c] flex flex-col items-center py-2 justify-between h-screen flex-shrink-0 select-none font-sans">
-      
+    <div className="hidden md:flex w-12 bg-[#0c1017] border-r border-[#1f242c] flex-col items-center py-2 justify-between h-screen flex-shrink-0 select-none font-sans">
+
       {/* KELOMPOK IKON ATAS */}
       <div className="w-full flex flex-col items-center gap-1">
         {topIcons.map((item, idx) => {
           const Icon = item.icon
           const isActive = activeIcon === idx
-          
+
           return (
             <button
               key={idx}
               onClick={() => setActiveIcon(idx)}
-              className={`w-full h-11 flex items-center justify-center relative group transition-colors ${
-                isActive ? 'text-[#e1e4e8]' : 'text-[#626a73] hover:text-[#e1e4e8]'
-              }`}
+              className={`w-full h-11 flex items-center justify-center relative group transition-colors ${isActive ? 'text-[#e1e4e8]' : 'text-[#626a73] hover:text-[#e1e4e8]'
+                }`}
               title={item.label}
             >
               {/* Garis Indikator Aktif di Sisi Kiri */}
               {isActive && (
                 <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-[#70e6d2]" />
               )}
-              
+
               <Icon size={22} strokeWidth={isActive ? 1.5 : 1.25} />
-              
+
               {/* Badge Notifikasi Toska Bulat Sempurna */}
               {item.badge && (
                 <span className="absolute bottom-1 right-1 bg-[#70e6d2] text-[#0c1017] text-[9px] font-bold w-[15px] h-[15px] rounded-full flex items-center justify-center border border-[#0c1017] shadow-sm">
