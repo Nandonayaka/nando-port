@@ -9,10 +9,12 @@ import {
   UserCircle2,
   Settings
 } from 'lucide-react'
+import { useFileContext } from '@/lib/FileContext'
 import { useState } from 'react'
 
 export default function ActivityBar() {
   const [activeIcon, setActiveIcon] = useState(0)
+  const { isMobileMenuOpen } = useFileContext()
 
   const topIcons = [
     { icon: Files, label: 'Explorer', badge: null },
@@ -23,7 +25,7 @@ export default function ActivityBar() {
   ]
 
   return (
-    <div className="hidden md:flex w-12 bg-[#0c1017] border-r border-[#1f242c] flex-col items-center py-2 justify-between h-screen flex-shrink-0 select-none font-sans">
+    <div className={`${isMobileMenuOpen ? 'flex' : 'hidden md:flex'} absolute md:relative z-50 w-12 bg-[#0c1017] border-r border-[#1f242c] flex-col items-center py-2 justify-between h-full flex-shrink-0 select-none font-sans`}>
 
       {/* KELOMPOK IKON ATAS */}
       <div className="w-full flex flex-col items-center gap-1">

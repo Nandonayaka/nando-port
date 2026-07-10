@@ -10,19 +10,30 @@ import {
   X,
   PanelLeft,
   PanelBottom,
-  PanelRight
+  PanelRight,
+  Menu
 } from 'lucide-react'
+import { useFileContext } from '@/lib/FileContext'
 
 export default function TitleBar() {
   const menus = ['File', 'Edit', 'Selection', 'View', 'Go', 'Run', 'Terminal', 'Help']
+  const { isMobileMenuOpen, setIsMobileMenuOpen } = useFileContext()
 
   return (
     <div className="bg-[#0c1017] text-[#9099a4] text-[12px] h-9 px-3 flex items-center justify-between border-b border-[#1f242c] select-none flex-shrink-0 font-sans relative">
 
       {/* SEKSI KIRI: Logo & Menu Bar */}
       <div className="flex items-center gap-3.5 h-full z-10">
+        {/* Mobile Hamburger */}
+        <button
+          className="md:hidden flex items-center justify-center text-[#9099a4] hover:text-white"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          <Menu size={16} />
+        </button>
+
         {/* VS Code Logo Resmi */}
-        <svg className="w-3.5 h-3.5 text-[#007acc] flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+        <svg className="hidden md:block w-3.5 h-3.5 text-[#007acc] flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
           <path d="M23.922 16.916a.747.747 0 0 0-.214-.523l-3.35-3.323 3.364-3.323a.753.753 0 0 0 .01-.54 1.13 1.13 0 0 0-.25-.4l-4.14-3.66a.748.748 0 0 0-.962.036l-7.393 6.643-3.64-2.735a.747.747 0 0 0-.934.026L.18 11.666a.752.752 0 0 0 0 1.066l6.233 2.548a.748.748 0 0 0 .934-.026l3.64-2.734 7.393 6.643a.746.746 0 0 0 .962.036l4.14-3.66a1.135 1.135 0 0 0 .44-.623zM17.473 12l-4.475-4.02 5.347-4.805 3.107 2.748L17.473 12z" />
         </svg>
 

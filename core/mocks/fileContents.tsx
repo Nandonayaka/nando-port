@@ -68,7 +68,7 @@ Jika Anda tertarik untuk ngobrol, kolaborasi, atau melihat proyek saya yang lain
     'FrontendDev.tsx': `// ==========================================
 // KEAHLIAN SAYA DI BIDANG FRONTEND (TAMPILAN WEB)
 // ==========================================
-// Di bawah ini adalah daftar "alat perang" (teknologi)
+// Di bawah ini adalah daftar bahasa pemrograman (teknologi)
 // yang biasa saya gunakan untuk membuat website.
 
 export const SenjataUtama = [
@@ -78,7 +78,7 @@ export const SenjataUtama = [
   "TypeScript (Biar kodenya aman dan jarang error)"
 ];
 
-// Dan ini adalah cara saya bekerja setiap hari
+// Dan ini adalah cara saya testing setiap hari
 export const caraKerja = () => {
   console.log("1. Menerima desain dari klien atau UI/UX");
   console.log("2. Merancang struktur kode yang rapi");
@@ -123,8 +123,10 @@ export const caraKerja = () => {
   },
   
   "penghargaan": [
-    "Desain Antarmuka Paling User-Friendly 2023",
-    "Gelar Coder Terinovatif"
+    "Sertifikasi Kompeten Pt HummaTech Indonesia",
+    "Sertifikasi Magang Pt HummaTech Indonesia",
+    "Medali Emas Olimpiade KS2N Bahasa Inggris",
+    "Medali Emas Olimpiade KS2N Bahasa Inggris"
   ],
 
   "prinsip_utama": "Membangun kepercayaan klien dengan hasil yang sesuai janji dan tepat waktu."
@@ -137,16 +139,16 @@ export const caraKerja = () => {
 
 const riwayatPekerjaan = [
   {
-    klien: "Startup Toko Online",
+    klien: "Startup Wisata Alam",
     peran: "Konsultan Tampilan Web",
     durasi: "6 bulan",
-    deskripsi: "Saya membantu toko online tersebut merombak total tampilan aplikasinya. Hasilnya, pembeli semakin mudah mencari barang dan angka penjualannya naik 40%!"
+    deskripsi: "Saya membantu startup tersebut merombak total tampilan website. Hasilnya, pengunjung semakin mudah mencari barang dan angka penjualannya naik 40%!"
   },
   {
-    klien: "Kedai Kopi Lokal",
+    klien: "UMKM",
     peran: "Pembuat Website Mandiri",
     durasi: "2 bulan",
-    deskripsi: "Membuatkan sistem kasir digital dan menu pemesanan online supaya toko kopinya makin canggih."
+    deskripsi: "Membuatkan sistem kasir digital dan menu pemesanan online supaya UMKM nya makin canggih."
   }
 ];
 
@@ -200,7 +202,7 @@ export default riwayatPekerjaan;`,
   menyambut tamu dan menjelaskan cara pakai proyeknya.
 -->
 
-# Selamat Datang di Portofolio Nando! 🚀
+# Selamat Datang di Portofolio Nando! 
 
 Portofolio ini sengaja saya buat mirip dengan **Visual Studio Code** (VS Code). 
 Bagi yang belum tahu, VS Code adalah "rumah" atau alat di mana semua programmer 

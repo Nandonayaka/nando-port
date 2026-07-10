@@ -23,7 +23,7 @@ import { useFileContext } from '@/lib/FileContext'
 import { mockFileContents } from '@/core/mocks/fileContents'
 
 export default function Editor() {
-  const { activeFile, setActiveFile } = useFileContext();
+  const { activeFile, setActiveFile, setIsMobileMenuOpen } = useFileContext();
   const [activeTab, setActiveTab] = useState('welcome')
 
   // Automatically switch tab to the active file when it changes
@@ -100,16 +100,16 @@ export default function Editor() {
 
   // Fake file contents map is now imported from @/core/mocks/fileContents
   return (
-    <div className={`flex-1 flex-col bg-[#181a1f] h-screen text-[#cccccc] font-sans overflow-hidden select-none ${(!activeFile && activeTab === 'welcome') ? 'hidden md:flex' : 'flex'}`}>
+    <div className={`flex-1 flex-col bg-[#181a1f] h-screen text-[#cccccc] font-sans overflow-hidden select-none flex`}>
       {/* Tab Bar / Top Navigation */}
       <div className="bg-[#1f2428] h-9 flex items-center justify-between border-b border-[#24292e] px-2 flex-shrink-0 hide-scrollbar overflow-x-auto">
         <div className="flex items-center h-full">
           {/* Mobile Back to Explorer Button */}
           <div
             className="md:hidden flex items-center justify-center px-2 text-[#9da5b4] hover:text-white cursor-pointer border-r border-[#24292e] mr-1"
-            onClick={() => setActiveFile(null)}
+            onClick={() => setIsMobileMenuOpen(true)}
           >
-            ← Menu
+            ☰ Files
           </div>
 
           {/* Welcome Tab */}
@@ -163,16 +163,16 @@ export default function Editor() {
       {/* Content Area */}
       <div className="flex-1 overflow-y-auto bg-[#181a1f] flex justify-center items-start">
         {activeTab === 'welcome' || (!activeFile && activeTab !== 'welcome') ? (
-          <div className="w-full max-w-5xl px-16 py-20 grid grid-cols-12 gap-x-16">
+          <div className="w-full max-w-5xl px-6 py-10 md:px-16 md:py-20 flex flex-col xl:grid xl:grid-cols-12 xl:gap-x-16 gap-y-10">
 
             {/* Left / Header Area */}
-            <div className="col-span-12 mb-10">
-              <h1 className="text-4xl font-light text-[#e1e4e8] mb-2 tracking-wide">Visual Studio Code</h1>
-              <p className="text-lg text-[#6a737d] font-light">Editing evolved</p>
+            <div className="xl:col-span-12 mb-2 xl:mb-10">
+              <h1 className="text-2xl md:text-4xl font-light text-[#e1e4e8] mb-2 tracking-wide">Visual Studio Code</h1>
+              <p className="text-base md:text-lg text-[#6a737d] font-light">Editing evolved</p>
             </div>
 
             {/* LEFT COLUMN: Start & Recent */}
-            <div className="col-span-5 space-y-10">
+            <div className="xl:col-span-5 space-y-10">
               {/* Start Section */}
               <div>
                 <h2 className="text-sm font-medium text-[#e1e4e8] mb-4">Start</h2>
@@ -210,7 +210,7 @@ export default function Editor() {
             </div>
 
             {/* RIGHT COLUMN: Walkthroughs */}
-            <div className="col-span-7">
+            <div className="xl:col-span-7">
               <h2 className="text-sm font-medium text-[#e1e4e8] mb-4">Walkthroughs</h2>
               <div className="space-y-4">
                 {walkthroughs.map((item, idx) => (

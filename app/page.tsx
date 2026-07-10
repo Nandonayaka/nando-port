@@ -13,7 +13,7 @@ export default function Home() {
         <Header />
 
         {/* Main Content Area */}
-        <div className="flex-1 flex overflow-hidden">
+        <div className="flex-1 flex overflow-hidden relative">
           {/* Sidebar */}
           <Sidebar />
 
